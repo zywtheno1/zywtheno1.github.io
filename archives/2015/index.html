@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="theme-next use-motion theme-next-mist">
+<html class="theme-next use-motion ">
 <head>
   
 
@@ -22,7 +22,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,next,bambooleaf" />
+  <meta name="keywords" content="Hexo,next" />
 
 
 
@@ -63,14 +63,6 @@
         <a href="/">
           <i class="menu-item-icon icon-home"></i> <br />
           首頁
-        </a>
-      </li>
-    
-      
-      <li class="menu-item menu-item-categories">
-        <a href="/categories">
-          <i class="menu-item-icon icon-categories"></i> <br />
-          分類
         </a>
       </li>
     
@@ -133,14 +125,14 @@
 
       <div class="post-title">
         
-            <a class="post-title-link" href="/2015/05/12/hello-world/">
-              Hello World
+            <a class="post-title-link" href="/2015/05/13/tst/">
+              tst
             </a>
         
       </div>
 
       <div class="post-meta">
-        <span class="post-time"> 05-11 </span>
+        <span class="post-time"> 05-12 </span>
       </div>
 
     </div>
@@ -161,7 +153,6 @@
       </div>
 
 
-
       
   
   <div class="sidebar-toggle">
@@ -179,7 +170,7 @@
 
       <div class="site-overview">
         <div class="site-author motion-element">
-          <img class="site-author-image" src="http://7xj22g.com1.z0.glb.clouddn.com/zyw_kelode.jpg" alt="Bambooleaf" />
+          <img class="site-author-image" src="/images/default_avatar.jpg" alt="Bambooleaf" />
           <p class="site-author-name">Bambooleaf</p>
         </div>
         <p class="site-description motion-element">孤单却不寂寞</p>
@@ -192,15 +183,15 @@
           </div>
 
           <div class="site-state-item site-state-categories">
-            <a href="/categories">
+            
               <span class="site-state-item-count">1</span>
               <span class="site-state-item-name">分類</span>
-              </a>
+              
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">0</span>
+              <span class="site-state-item-count">1</span>
               <span class="site-state-item-name">標籤</span>
               </a>
           </div>
@@ -245,7 +236,7 @@
 <div class="theme-info">
   主題 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT
   </a>
 </div>
 
@@ -370,9 +361,6 @@
       $.Velocity.RunSequence([
         { e: $('.brand'), p: { opacity: 1 }, o: { duration: 100 } },
         { e: $('.logo'), p: { opacity: 1, top: 0 }, o: { duration: 50} },
-        
-        { e: $('.logo-line-before i'), p: { translateX: "100%" }, o: { duration: 500, sequenceQueue: false } },
-        { e: $('.logo-line-after i'), p: { translateX: "-100%" }, o: { duration: 500, sequenceQueue: false } },
         
         { e: $('.site-title'), p: { opacity: 1, top: 0 }, o: { duration: 200 } }
       ]);
