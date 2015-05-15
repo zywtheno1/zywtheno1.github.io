@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>hexo博客建立全过程 | Bambooleaf&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前言忘记了具体是怎么接触到nodejs的，只是感觉通过nodejs真切感觉到了，以后前端开发将会是趋势，所以也想着加入到前端开发的行列中来，在网上查询nodejs的学习路径，看见了使用Hexo搭建个人博客这么一条，于是便学着搭建起来一个，顺便以此作为学习的起点，网上的教程博客很多，一下的只是我个人操作的时候使用到 地方，趁着刚刚做完，还记得不少，就赶紧记录了下来。顺便一提，由于nodejs的开发环">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo博客建立全过程">
+<meta property="og:url" content="http://yoursite.com/2015/05/15/hexo-procedure/index.html">
+<meta property="og:site_name" content="Bambooleaf's blog">
+<meta property="og:description" content="前言忘记了具体是怎么接触到nodejs的，只是感觉通过nodejs真切感觉到了，以后前端开发将会是趋势，所以也想着加入到前端开发的行列中来，在网上查询nodejs的学习路径，看见了使用Hexo搭建个人博客这么一条，于是便学着搭建起来一个，顺便以此作为学习的起点，网上的教程博客很多，一下的只是我个人操作的时候使用到 地方，趁着刚刚做完，还记得不少，就赶紧记录了下来。顺便一提，由于nodejs的开发环">
+<meta property="og:image" content="http://pic.yupoo.com/vankos_v/DKi6S7PO/lpjsl.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hexo博客建立全过程">
+<meta name="twitter:description" content="前言忘记了具体是怎么接触到nodejs的，只是感觉通过nodejs真切感觉到了，以后前端开发将会是趋势，所以也想着加入到前端开发的行列中来，在网上查询nodejs的学习路径，看见了使用Hexo搭建个人博客这么一条，于是便学着搭建起来一个，顺便以此作为学习的起点，网上的教程博客很多，一下的只是我个人操作的时候使用到 地方，趁着刚刚做完，还记得不少，就赶紧记录了下来。顺便一提，由于nodejs的开发环">
+  
+    <link rel="alternative" href="/atom.xml" title="Bambooleaf&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img lazy-src="http://7xj22g.com1.z0.glb.clouddn.com/zyw_kelode.jpg" class="js-avatar">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Bambooleaf</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">像竹子一样成长</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/github/" style="font-size: NaNpx;">github</a><a href="/tags/hello-world/" style="font-size: NaNpx;">hello world</a><a href="/tags/hexo/" style="font-size: NaNpx;">hexo</a><a href="/tags/nodejs/" style="font-size: NaNpx;">nodejs</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://litten.github.io/">本主题原作者的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">前端菜鸟，正努力转型中~</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Bambooleaf</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://7xj22g.com1.z0.glb.clouddn.com/zyw_kelode.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Bambooleaf</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">像竹子一样成长</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-hexo-procedure" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/05/15/hexo-procedure/" class="article-date">
+  	<time datetime="2015-05-15T13:19:26.000Z" itemprop="datePublished">2015-05-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      hexo博客建立全过程
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/学习笔记/">学习笔记</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="前言">前言</h1><p>忘记了具体是怎么接触到nodejs的，只是感觉通过nodejs真切感觉到了，以后前端开发将会是趋势，所以也想着加入到前端开发的行列中来，在网上查询nodejs的学习路径，看见了使用Hexo搭建个人博客这么一条，于是便学着搭建起来一个，顺便以此作为学习的起点，网上的教程博客很多，一下的只是我个人操作的时候使用到 地方，趁着刚刚做完，还记得不少，就赶紧记录了下来。<br>顺便一提，由于nodejs的开发环境推荐使用Linux或者Mac OS X下进行，同时本人穷小子一个，所以就毫不犹豫的自己装了个虚拟机，在linux上进行开发了，所以一下所处环境都是在虚拟机里的ubuntu下进行的</p>
+<a id="more"></a>
+<h1 id="github">github</h1><p>github相信即使没用过，大家也都听过，目前非常多且著名的开源项目都托管在这里，而且由于其免费提供300M空间，目前在天朝也没有被墙，也能顺便学习一下git，所以想要找到一个免费的静态博客托管服务器，github毫无疑问是最佳选择之一。</p>
+<h2 id="配置和使用_github">配置和使用 github</h2><p>首先，注册一个<a href="https://github.com/" target="_blank" rel="external">github</a>帐号</p>
+<h3 id="配置SSH_keys">配置SSH keys</h3><p>我们如何让本地git项目与远程的github建立联系呢？用SSH keys。</p>
+<blockquote>
+<p>cd ~/. ssh   检查本机的ssh密钥<br>ssh-keygen -t rsa -C “邮件地址@youremail.com” 生成新密钥<br>Generating public/private rsa key pair.<br>Enter file in which to save the key &gt;(/Users/your_user_directory/.ssh/id_rsa):&lt;回车就好&gt;</p>
+<p>注意1: 此处的邮箱地址，你可以输入自己的邮箱地址；<br>注意2: 此处的「-C」的是大写的「C」</p>
+</blockquote>
+<p>然后系统会要你输入密码：</p>
+<blockquote>
+<p>Enter passphrase (empty for no passphrase):&lt;输入加密串&gt;<br>Enter same passphrase again:&lt;再次输入加密串&gt;</p>
+</blockquote>
+<p>如果出现下面的画面，就是配置成功了<br><img src="http://pic.yupoo.com/vankos_v/DKi6S7PO/lpjsl.png" alt="密钥生成成功"></p>
+<h3 id="添加SSH_Key到GitHub">添加SSH Key到GitHub</h3><ul>
+<li>打开本地~/.ssh/id_rsa.pub文件。此文件里面内容为刚才生成人密钥。准确的复制这个文件的内容，才能保证设置的成功。</li>
+<li>登陆github系统。点击右上角的 Account Settings—-&gt;SSH Public keys —-&gt; add another public keys</li>
+<li>把你本地生成的密钥复制到里面（key文本框中）， 点击 add key 就ok了</li>
+</ul>
+<p>可以输入下面的命令，看看设置是否成功，git@github.com的部分不要修改：</p>
+<blockquote>
+<p>$ ssh -T git@github.com</p>
+</blockquote>
+<p>如果是下面的反馈：</p>
+<blockquote>
+<p>The authenticity of host ‘github.com (207.97.227.239)’ can’t be &gt;established.<br>RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.<br>Are you sure you want to continue connecting (yes/no)?</p>
+</blockquote>
+<p>不要紧张，输入yes就好，然后会看到：</p>
+<blockquote>
+<p>Hi cnfeat! You’ve successfully authenticated, but GitHub does not &gt;provide shell access.</p>
+</blockquote>
+<p>最后</p>
+<blockquote>
+<p>git config —global user.name “cnfeat”//用户名<br>git config —global user.email  “cnfeat@gmail.com”//填写自己的邮箱</p>
+</blockquote>
+<p>至此，与github的链接建立完成</p>
+<h3 id="使用GitHub_Pages建立博客">使用GitHub Pages建立博客</h3><p>与GitHub建立好链接之后，就可以方便的使用它提供的Pages服务，GitHub Pages分两种，一种是你的GitHub用户名建立的username.github.io这样的用户&amp;组织页（站），另一种是依附项目的pages。</p>
+<p>想建立个人博客是用的第一种，形如cnfeat.github.io这样的可访问的站，每个用户名下面只能建立一个。<br>具体流程可以参考<a href="http://www.pchou.info/web-build/2013/01/05/build-github-blog-page-02.html" target="_blank" rel="external">一步步在GitHub上创建博客主页(2)</a></p>
+<h1 id="nodejs">nodejs</h1><p>目前国内比较活跃的是<a href="https://cnodejs.org/" target="_blank" rel="external">Cnode社区</a>，有兴趣的可以去转转。<br>我是通过nvm安装node的</p>
+<blockquote>
+<p>cd ~/git<br>git clone <a href="https://github.com/cnpm/nvm.git" target="_blank" rel="external">https://github.com/cnpm/nvm.git</a><br>source ~/git/nvm/nvm.sh</p>
+</blockquote>
+<p>然后就可以安装任意版本的nodejs了</p>
+<blockquote>
+<p>nvm install 0.12.0</p>
+</blockquote>
+<p>具体可参考社区里新手教学的<a href="http://fengmk2.com/blog/2014/03/node-env-and-faster-npm.html" target="_blank" rel="external">快速搭建 Node.js / io.js 开发环境以及加速 npm</a></p>
+<h1 id="hexo">hexo</h1><p>Hexo的作者是<a href="https://github.com/tommy351" target="_blank" rel="external">tommy351</a>，根据<a href="http://hexo.io/docs/index.html" target="_blank" rel="external">官方介绍</a>，Hexo是一个简单、快速、强大的博客发布工具，支持Markdown格式。</p>
+<h2 id="安装hexo">安装hexo</h2><p>找到一个路径，新建一个文件夹，比如我的就叫做Hexo。进入此路径后</p>
+<blockquote>
+<p>npm install -g hexo<br>hexo init</p>
+</blockquote>
+<p>成功后此路径下就会多出一个完整的hexo项目。</p>
+<blockquote>
+<p>hexo g<br>hexo s</p>
+</blockquote>
+<p>浏览器输入<a href="http://localhost:4000，查看搭建效果。" target="_blank" rel="external">http://localhost:4000，查看搭建效果。</a></p>
+<p>PS：这个安装方法我使用后只能在这个Hexo目录下有效，这么设置成全局的我没有研究<br>常用命令如下：</p>
+<blockquote>
+<p>hexo new “postName” #新建文章<br>hexo new page “pageName” #新建页面<br>hexo generate #生成静态页面至public目录<br>hexo server #开启预览访问端口（默认端口4000，’ctrl + c’关闭server）<br>hexo deploy #将.deploy目录部署到GitHub</p>
+</blockquote>
+<p>也可以简写：</p>
+<blockquote>
+<p>hexo n == hexo new<br>hexo g == hexo generate<br>hexo s == hexo server<br>hexo d == hexo deploy</p>
+</blockquote>
+<h2 id="克隆主题">克隆主题</h2><p>成功以后，你会发现在你的目录下有个themes的文件夹，这个就是hexo的主题，你可以通过修改配置文件_config.yml中的theme的值来确定使用哪个主题。主题的下载地址是<a href="http://hexo.io/themes/,当然也有很多不错的主题并没有在这个页面里，需要你去一下论坛或什么地方找了，比如我现在使用的主题是https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">http://hexo.io/themes/,当然也有很多不错的主题并没有在这个页面里，需要你去一下论坛或什么地方找了，比如我现在使用的主题是https://github.com/litten/hexo-theme-yilia</a></p>
+<p>具体使用起来很简单</p>
+<blockquote>
+<p>git clone <a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="external">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia</p>
+</blockquote>
+<p>然后你的themes文件夹下就多了个yilia的文件夹，修改_config.yml中的theme的就可以选定你要用的主题了，你可以多下载几个都试试效果，然后再确定最后使用谁的。<br>最后推荐一个学习hexo具体配置的地方<br><a href="http://zipperary.com/categories/hexo/" target="_blank" rel="external">http://zipperary.com/categories/hexo/</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/05/13/hello world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">个人博客开通</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="hexo-procedure" data-title="hexo博客建立全过程" data-url="http://yoursite.com/2015/05/15/hexo-procedure/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"bambooleaf"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Bambooleaf
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+<! -- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  </div>
+</body>
+</html>
