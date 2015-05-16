@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>package.json详解 | Bambooleaf&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="package.json文件详解name必须 字段下面是官方的建议：
+
+名字里不要再包含”js”和”node”，因为默认NPM包就是node.js程序，不过你可以通过engines字段来指定。
+名字将会被作为url的一部分，所有要符合http url的一般命名规则，不能包含url非法字符，也不能以.和_开头。
+名字也将作为require()命令的参数，所以应该尽量简明。
+如果包要发布到NPM平台上">
+<meta property="og:type" content="article">
+<meta property="og:title" content="package.json详解">
+<meta property="og:url" content="http://yoursite.com/2015/05/16/package-json详解/index.html">
+<meta property="og:site_name" content="Bambooleaf's blog">
+<meta property="og:description" content="package.json文件详解name必须 字段下面是官方的建议：
+
+名字里不要再包含”js”和”node”，因为默认NPM包就是node.js程序，不过你可以通过engines字段来指定。
+名字将会被作为url的一部分，所有要符合http url的一般命名规则，不能包含url非法字符，也不能以.和_开头。
+名字也将作为require()命令的参数，所以应该尽量简明。
+如果包要发布到NPM平台上">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="package.json详解">
+<meta name="twitter:description" content="package.json文件详解name必须 字段下面是官方的建议：
+
+名字里不要再包含”js”和”node”，因为默认NPM包就是node.js程序，不过你可以通过engines字段来指定。
+名字将会被作为url的一部分，所有要符合http url的一般命名规则，不能包含url非法字符，也不能以.和_开头。
+名字也将作为require()命令的参数，所以应该尽量简明。
+如果包要发布到NPM平台上">
+  
+    <link rel="alternative" href="/atom.xml" title="Bambooleaf&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img lazy-src="http://7xj22g.com1.z0.glb.clouddn.com/zyw_kelode.jpg" class="js-avatar">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Bambooleaf</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">像竹子一样成长</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/github/" style="font-size: 10px;">github</a><a href="/tags/hello-world/" style="font-size: 10px;">hello world</a><a href="/tags/hexo/" style="font-size: 10px;">hexo</a><a href="/tags/nodejs/" style="font-size: 20px;">nodejs</a><a href="/tags/package-json/" style="font-size: 10px;">package.json</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://litten.github.io/">本主题原作者的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">前端菜鸟，正努力转型中~</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Bambooleaf</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://7xj22g.com1.z0.glb.clouddn.com/zyw_kelode.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Bambooleaf</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">像竹子一样成长</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-package-json详解" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/05/16/package-json详解/" class="article-date">
+  	<time datetime="2015-05-16T02:12:41.000Z" itemprop="datePublished">2015-05-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      package.json详解
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/package-json/">package.json</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/学习笔记/">学习笔记</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="package-json文件详解">package.json文件详解</h1><h2 id="name">name</h2><p><strong>必须</strong> 字段<br>下面是官方的建议：</p>
+<ul>
+<li>名字里不要再包含”js”和”node”，因为默认NPM包就是node.js程序，不过你可以通过engines字段来指定。</li>
+<li>名字将会被作为url的一部分，所有要符合http url的一般命名规则，不能包含url非法字符，也不能以.和_开头。</li>
+<li>名字也将作为require()命令的参数，所以应该尽量简明。</li>
+<li>如果包要发布到NPM平台上的话，最好先检查下有没有重名, 并且字母只能全部小写。<br>新版本的NPM可以指定scope, 名字可以加前缀标识，如@ijse/mypackage。</li>
+</ul>
+<a id="more"></a>
+<h2 id="version">version</h2><p><strong>必须</strong> 字段<br>在package.json中最重要的就是name和version字段。他们都是必须的，如果没有就无法install。name和version一起组成的标识在假设中是唯一的。改变包应该同时改变version。</p>
+<p>version必须能被 <a href="https://github.com/npm/node-semver" target="_blank" rel="external">node-semver</a>解析，它被包在npm的依赖中。（要自己用可以执行npm install semver）</p>
+<p>更多可用的“数字”或者“范围”见<a href="https://docs.npmjs.com/misc/semver" target="_blank" rel="external">semver(7)</a>.</p>
+<h2 id="description">description</h2><p>可选字段<br>包的描述信息，将会在npm search的返回结果中显示，以帮助用户选择合适的包。</p>
+<h2 id="keywords">keywords</h2><p>可选字段<br>包的关键词信息，是一个字符串数组，同上也将显示在npm search的结果中。</p>
+<h2 id="homepage">homepage</h2><p>可选字段<br><strong>没有</strong> <a href="http://等带协议前缀的URL。" target="_blank" rel="external">http://等带协议前缀的URL。</a></p>
+<h2 id="bugs">bugs</h2><p>可选字段<br>你项目的提交问题的url和（或）邮件地址。</p>
+<blockquote>
+<p>bugs: {<br> “url”: “<a href="http://github.com/ijse/project/issues" target="_blank" rel="external">http://github.com/ijse/project/issues</a>“,<br> “email”: “my@ijser.cn”<br>}</p>
+</blockquote>
+<h2 id="license">license</h2><p>可选字段<br>包的开源协议名称<br>如果是使用一个普遍的license，比如BSD-3-Clause或MIT，直接使用：</p>
+<blockquote>
+<p>{ “license” :”BSD-3-Clause”}</p>
+</blockquote>
+<p>如果你有更复杂的许可条件，或者想要提供给更多地细节，可以这样:</p>
+<blockquote>
+<p>“licenses” : [<br>  { “type” : “MyLicense”<br>  , “url” : “<a href="http://github.com/owner/project/path/to/license" target="_blank" rel="external">http://github.com/owner/project/path/to/license</a>“<br>  }<br>]</p>
+</blockquote>
+<h2 id="author">author</h2><p>可选字段<br>包的作者，可以是字符串或对象</p>
+<blockquote>
+<p>author: {<br>  “name”: “ijse”,<br>  “email”: “my@ijse.cn”,<br>  “url”: “<a href="http://www.ijser.cn" target="_blank" rel="external">http://www.ijser.cn</a>“<br>}</p>
+</blockquote>
+<p>或者</p>
+<blockquote>
+<p>author: “ijse <a href="&#x6d;&#x61;&#105;&#108;&#116;&#x6f;&#58;&#x6d;&#x79;&#x40;&#105;&#x6a;&#115;&#101;&#x72;&#46;&#99;&#110;">&#x6d;&#x79;&#x40;&#105;&#x6a;&#115;&#101;&#x72;&#46;&#99;&#110;</a> (<a href="http://www.ijser.cn" target="_blank" rel="external">http://www.ijser.cn</a>)”  </p>
+</blockquote>
+<h2 id="contributors">contributors</h2><p>可选字段<br>包的贡献者，是一个数组</p>
+<h2 id="files">files</h2><p>可选字段<br>包所包含的所有文件，可以取值为文件夹。</p>
+<p>通常我们还是用.npmignore来去除不想包含到包里的文件。</p>
+<h2 id="main">main</h2><p>可选字段<br>这个字段的值是你程序主入口模块的ID。如果其他用户需要你的包，当用户调用require()方法时，返回的就是这个模块的导出（exports）。</p>
+<h2 id="bin">bin</h2><p>可选字段<br>如果你的包里包含可执行文件，通过设置这个字段可以将它们包含到系统的PATH中，这样直接就可以运行，很方便。如：</p>
+<blockquote>
+<p>“bin”: {<br>  “iapp”: “./cli.js”<br>}</p>
+</blockquote>
+<p>当包被安装后，NPM将创建一个cli.js文件的链接到/usr/local/bin/iapp下。</p>
+<h2 id="man">man</h2><p>为系统的man命令提供帮助文档, 如：</p>
+<blockquote>
+<p>“man”: “./man/doc.1”</p>
+</blockquote>
+<p>帮助文件的文件名必须以数字结尾，如果是压缩的，需要以.gz结尾。</p>
+<p>如果是字符串数组：</p>
+<blockquote>
+<p>“name”: “foo”,<br>“man”: [“./man/foo.1”, “./man/bar.1”, “./man/foo.2” ]</p>
+</blockquote>
+<p>则分别可以man foo, man foo-bar, man 2 foo来查看。</p>
+<h2 id="directories">directories</h2><p>CommonJS包所要求的目录结构信息，目前除了告诉别人你的程序目录结构，貌似没有别的什么用。<br>下级字段可以是：lib, bin, man, doc, example。 每个都是字符串</p>
+<h2 id="repository">repository</h2><p>可选字段<br>用于指示代码存放的位置</p>
+<blockquote>
+<p>“repository” :<br>  { “type” : “git”<br>  , “url” : “<a href="http://github.com/npm/npm.git" target="_blank" rel="external">http://github.com/npm/npm.git</a>“<br>  }<br>“repository” :<br>  { “type” : “svn”<br>  , “url” : “<a href="http://v8.googlecode.com/svn/trunk/" target="_blank" rel="external">http://v8.googlecode.com/svn/trunk/</a>“<br>  }</p>
+</blockquote>
+<h2 id="script">script</h2><p>“scripts”是一个由脚本命令组成的hash对象，他们在包不同的生命周期中被执行。key是生命周期事件，value是要运行的命令。</p>
+<p>参见 <a href="https://docs.npmjs.com/misc/scripts" target="_blank" rel="external">npm-scripts(7)</a></p>
+<h2 id="config">config</h2><p>可选字段<br>添加一些设置，可以供scripts读取用，同时这里的值也会被添加到系统的环境变量中。</p>
+<blockquote>
+<p>“name”: “foo”,<br>“config”: {<br>  “port”: “8080”<br>}</p>
+</blockquote>
+<p>npm start的时候会读取到npm_package_config_port环境变量。</p>
+<p>同时也可以使用npm config命令来修改设置：</p>
+<blockquote>
+<p>npm config set foo:port 8001  </p>
+</blockquote>
+<h2 id="dependencies">dependencies</h2><p>可选字段<br>指定依赖的其它包，这些依赖是指包发布后正常执行时所需要的，如果是开发中依赖的包，可以在devDependencies设置。</p>
+<p>通常使用下面命令来安装：</p>
+<blockquote>
+<p>npm install —save otherpackage  </p>
+</blockquote>
+<p>形式可以有如下多种：</p>
+<ul>
+<li>version 严格匹配某个版本</li>
+<li><blockquote>
+<p>version 必须大于某个版本</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>=version</p>
+</blockquote>
+</li>
+<li>&lt;version</li>
+<li>&lt;=version</li>
+<li>~version 大概匹配某个版本</li>
+<li>^version 兼容某个版本</li>
+<li>1.2.x 可以是1.2.0, 1.2.1等等，但不能是1.3.0</li>
+<li>http://… 指定tarball的url地址</li>
+<li><ul>
+<li>任何版本都可以</li>
+</ul>
+</li>
+<li>“” 同上</li>
+<li>version1 - version2 &gt;=version1 &lt;=version2</li>
+<li>range1 || range2 满足range1 或range2</li>
+<li>git://… git地址</li>
+<li>user/repo 同上</li>
+<li>tag 指定某个tag的版本</li>
+<li>path/path 本地包所有文件夹</li>
+</ul>
+<p>下面都是可以用的：</p>
+<blockquote>
+<p>{ “dependencies” :<br>  { “foo” : “1.0.0 - 2.9999.9999”<br>  , “bar” : “&gt;=1.0.2 <2.1.2" ,="" "baz"="" :="" "="">1.0.2 &lt;=2.3.4”<br>  , “boo” : “2.0.1”<br>  , “qux” : “<1.0.0 ||="">=2.3.1 <2.4.5 ||="">=2.5.2 &lt;3.0.0”<br>  , “asd” : “<a href="http://asdf.com/asdf.tar.gz" target="_blank" rel="external">http://asdf.com/asdf.tar.gz</a>“<br>  , “til” : “~1.2”<br>  , “elf” : “~1.2.3”<br>  , “two” : “2.x”<br>  , “thr” : “3.3.x”<br>  , “lat” : “latest”<br>  , “dyl” : “file:../dyl”<br>  }<br>}</2.4.5></1.0.0></2.1.2"></p>
+</blockquote>
+<p>Git URL可以有如下种形式：</p>
+<blockquote>
+<p>git://github.com/user/project.git#commit-ish<br>git+ssh://user@hostname:project.git#commit-ish<br>git+ssh://user@hostname/project.git#commit-ish<br>git+<a href="http://user@hostname/project/blah.git#commit-ish" target="_blank" rel="external">http://user@hostname/project/blah.git#commit-ish</a><br>git+<a href="https://user@hostname/project/blah.git#commit-ish" target="_blank" rel="external">https://user@hostname/project/blah.git#commit-ish</a>  </p>
+</blockquote>
+<h2 id="devdependencies">devdependencies</h2><p>这些依赖只有在开发时候才需要。</p>
+<blockquote>
+<p>npm install —save-dev mypack  </p>
+</blockquote>
+<h2 id="peerDependencies">peerDependencies</h2><p>相关的依赖，如果你的包是插件，而用户在使用你的包时候，通常也会需要这些依赖（插件），那么可以将依赖列到这里。</p>
+<p>举个例子，如karma, 它的package.json中有设置：</p>
+<blockquote>
+<p>“peerDependencies”: {<br>  “karma-jasmine”: “~0.1.0”,<br>  “karma-requirejs”: “~0.2.0”,<br>  “karma-coffee-preprocessor”: “~0.1.0”,<br>  “karma-html2js-preprocessor”: “~0.1.0”,<br>  “karma-chrome-launcher”: “~0.1.0”,<br>  “karma-firefox-launcher”: “~0.1.0”,<br>  “karma-phantomjs-launcher”: “~0.1.0”,<br>  “karma-script-launcher”: “~0.1.0”<br>}</p>
+</blockquote>
+<p>这些都是karma的相关插件，一般使用karma的时候都会需要。</p>
+<h2 id="bundledDependencies">bundledDependencies</h2><p>绑定的依赖包，发布的时候这些绑定包也会被一同发布。</p>
+<h2 id="optionalDependencies">optionalDependencies</h2><p>即使这些依赖没有，也可以正常安装使用</p>
+<h2 id="engines">engines</h2><p>指定包运行的环境</p>
+<blockquote>
+<p>“engines”: {<br>  “node”: “&gt;=0.10.3 &lt; 0.12”,<br>  “npm”: “~1.0.20”<br>}</p>
+</blockquote>
+<h2 id="engineStrict">engineStrict</h2><p>设置为true强制限定 engine</p>
+<h2 id="os">os</h2><p>指定你的包可以在哪些系统平台下运行。</p>
+<blockquote>
+<p>“os”: [ “darwin”, “linux”, “!win32” ]</p>
+</blockquote>
+<p>即可以在darwin和linux平台下运行，而不能在win32下。这里设定的取值是来自process.platform的。</p>
+<h2 id="cpu">cpu</h2><p>可以指定包运行的cpu架构，如</p>
+<blockquote>
+<p>“cpu”: [ “x64”, “!arm” ]</p>
+</blockquote>
+<p>取值来自process.arch。</p>
+<h2 id="preferGlobal">preferGlobal</h2><p>如果你的包是命令行运行的，那可以将其设置为true建议用户全局(npm install -g)安装。但它并不强制用户。</p>
+<h2 id="private">private</h2><p>设为true这个包将不会发布到NPM平台下。</p>
+<h2 id="publishConfig">publishConfig</h2><p>这个字段用于设置发布时候的一些设定。尤其方便你希望发布前设定指定的tag或registry。</p>
+<p>也可以设定其它子字段，但只有tag和registry会影响到发布。</p>
+<h2 id="默认值">默认值</h2><ul>
+<li><p>“scripts”: { “start”: “node server.js” } 如果在项目根目录下含有server.js文件，则NPM会自动设置此值。</p>
+</li>
+<li><p>“scripts”: { “preinstall”: “node-gyp rebuild” }</p>
+</li>
+</ul>
+<p>如果在项目根目录下含有binding.gyp文件，则NPM会自动设置此值。</p>
+<ul>
+<li>“contributors”: […]</li>
+</ul>
+<p>如果项目根目录下含有AUTHORS文件，则NPM会自动将每一行以Name <email> (url)的格式读取并设定此字段。</email></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/05/15/hexo-procedure/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">hexo博客建立全过程</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="package-json详解" data-title="package.json详解" data-url="http://yoursite.com/2015/05/16/package-json详解/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"bambooleaf"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Bambooleaf
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+<! -- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  </div>
+</body>
+</html>
