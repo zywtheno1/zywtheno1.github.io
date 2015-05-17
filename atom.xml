@@ -4,7 +4,7 @@
   <subtitle><![CDATA[像竹子一样成长]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-05-16T05:42:58.000Z</updated>
+  <updated>2015-05-17T13:32:22.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -13,6 +13,101 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[快速搭建express]]></title>
+    <link href="http://yoursite.com/2015/05/17/%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAexpress/"/>
+    <id>http://yoursite.com/2015/05/17/快速搭建express/</id>
+    <published>2015-05-17T13:28:17.000Z</published>
+    <updated>2015-05-17T13:32:22.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="安装express">安装express</h1><blockquote>
+<p>npm install -g express</p>
+</blockquote>
+<p>不过由于express升级到了4.X版本，与之前版本差异性有些大，所以，还需要安装express-generator的包才可以</p>
+<blockquote>
+<p>npm install -g express-generator</p>
+</blockquote>
+<p>然后执行<br>express -V查看版本号，注意此处-V是大写字母<br><a id="more"></a></p>
+<p>安装完成以后，进入你想要放项目的目录，</p>
+<blockquote>
+<p>express demo-project</p>
+</blockquote>
+<p>就会生成一个空的express项目，包含各种文件夹，然后进入此文件夹</p>
+<blockquote>
+<p>npm install</p>
+</blockquote>
+<p>执行自动的更新</p>
+<p>至此一个完整的express就完成了，打开app.js<br>文件，在最后添加一句</p>
+<blockquote>
+<p>app.listen(3000)</p>
+</blockquote>
+<p>然后在本地浏览器输入localhost:3000，就能能够看见结果了。</p>
+<p>网上的教程多是在express3.x下的，其中的转变可以参考这个博客<br><a href="http://www.cnblogs.com/haogj/p/3985438.html" target="_blank" rel="external">http://www.cnblogs.com/haogj/p/3985438.html</a></p>
+<h1 id="app-js内容详解">app.js内容详解</h1><p>一个新建立的express工程，app.js里面会自动生成如下的代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="keyword">var</span> favicon = <span class="built_in">require</span>(<span class="string">'static-favicon'</span>);</span><br><span class="line"><span class="keyword">var</span> logger = <span class="built_in">require</span>(<span class="string">'morgan'</span>);</span><br><span class="line"><span class="keyword">var</span> cookieParser = <span class="built_in">require</span>(<span class="string">'cookie-parser'</span>);</span><br><span class="line"><span class="keyword">var</span> bodyParser = <span class="built_in">require</span>(<span class="string">'body-parser'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> routes = <span class="built_in">require</span>(<span class="string">'./routes/index'</span>);</span><br><span class="line"><span class="keyword">var</span> users = <span class="built_in">require</span>(<span class="string">'./routes/users'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> app = express();</span><br><span class="line"></span><br><span class="line"><span class="comment">// view engine setup</span></span><br><span class="line">app.set(<span class="string">'views'</span>, path.join(__dirname, <span class="string">'views'</span>));</span><br><span class="line">app.set(<span class="string">'view engine'</span>, <span class="string">'ejs'</span>);</span><br><span class="line"></span><br><span class="line">app.use(favicon());</span><br><span class="line">app.use(logger(<span class="string">'dev'</span>));</span><br><span class="line">app.use(bodyParser.json());</span><br><span class="line">app.use(bodyParser.urlencoded());</span><br><span class="line">app.use(cookieParser());</span><br><span class="line">app.use(express.static(path.join(__dirname, <span class="string">'public'</span>)));</span><br><span class="line"></span><br><span class="line">app.use(<span class="string">'/'</span>, routes);</span><br><span class="line">app.use(<span class="string">'/users'</span>, users);</span><br><span class="line"></span><br><span class="line"><span class="comment">/// catch 404 and forwarding to error handler</span></span><br><span class="line">app.use(<span class="function"><span class="keyword">function</span><span class="params">(req, res, next)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> err = <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Not Found'</span>);</span><br><span class="line">    err.status = <span class="number">404</span>;</span><br><span class="line">    next(err);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">/// error handlers</span></span><br><span class="line"><span class="comment">// development error handler</span></span><br><span class="line"><span class="comment">// will print stacktrace</span></span><br><span class="line"><span class="keyword">if</span> (app.get(<span class="string">'env'</span>) === <span class="string">'development'</span>) &#123;</span><br><span class="line">    app.use(<span class="function"><span class="keyword">function</span><span class="params">(err, req, res, next)</span> </span>&#123;</span><br><span class="line">        res.status(err.status || <span class="number">500</span>);</span><br><span class="line">        res.render(<span class="string">'error'</span>, &#123;</span><br><span class="line">            message: err.message,</span><br><span class="line">            error: err</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// production error handler</span></span><br><span class="line"><span class="comment">// no stacktraces leaked to user</span></span><br><span class="line">app.use(<span class="function"><span class="keyword">function</span><span class="params">(err, req, res, next)</span> </span>&#123;</span><br><span class="line">    res.status(err.status || <span class="number">500</span>);</span><br><span class="line">    res.render(<span class="string">'error'</span>, &#123;</span><br><span class="line">        message: err.message,</span><br><span class="line">        error: &#123;&#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = app;</span><br></pre></td></tr></table></figure>
+<p>下面针对此代码里出现的部分进行一些解释</p>
+<ul>
+<li>require();<br>模块引用（这个深入探究好像也挺多东西，在这就不详解了）</li>
+<li><p>use()<br>加载中间件（这个也挺复杂，我个人也还没理解好）</p>
+</li>
+<li><p>view engine setup<br>模板引擎，表明要使用的模板引擎是 ejs，页面模板在 views 子目录下。在 routes/index.js 的<br>exports.index 函数中通过如下语句调用模板引擎：<br>res.render(‘index’, { title: ‘Express’ });<br>res.render 的功能是调用模板引擎，并将其产生的页面直接返回给客户端。它接受<br>两个参数，第一个是模板的名称，即 views 目录下的模板文件名，不包含文件的扩展名；第<br>二个参数是传递给模板的数据，用于模板翻译。index.ejs 内容如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">h1</span>&gt;</span><span class="tag">&lt;<span class="title">%=</span> <span class="attribute">title</span> %&gt;</span><span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span>Welcome to <span class="tag">&lt;<span class="title">%=</span> <span class="attribute">title</span> %&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>上面代码其中有两处 &lt;%= title %&gt;，用于模板变量显示，它们在模板翻译时会被替换<br>成 Express，因为 res.render 传递了 { title: ‘Express’ }。</p>
+<h2 id="使用的中间件">使用的中间件</h2><ul>
+<li>favicon()<br>favicon是网站的小图标，显示在浏览器的地址栏和收藏栏里。为了得到这个图标，浏览器会请求/favicon.ico文件。一般来说，最好尽快响应对favicon文件的请求，这样程序的其他部分就可以忽略它们了。</li>
+<li>logger()<br>logger()是一个灵活的请求日志中间件，带有可定制的日志格式。它还能缓冲日志输出，减少写硬盘的次数，并且如果你想把日志输出到控制台之外的其他地方，比如文件或socket中，还可以指定日志流</li>
+<li>bodyParser()<br> 解析请求主体<br>所有Web程序都需要接受用户的输入。假设你要用HTML标签<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"file"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>接受用户上传的文件。用一行代码添加bodyParser()中间件就全齐了。这是个非常有用的组件，实际上它整合了其他三个更小的组件：json(),urlencoded(), 和 multipart()。</p>
+<ul>
+<li>cookieParser()<br> 解析HTTP cookie<br> cookie解析器支持常规cookie、签名cookie和特殊的JSON cookie。req.cookies默认是用常规未签名cookie组装而成的。如果你想支持session()中间件要求的签名cookie，在创建cookieParser()实例时要传入一个加密用的字符串。<br><strong>在服务器端设定cookie中间件</strong><blockquote>
+<p>cookieParser()不会为设定出站cookie提供任何帮助。<br>为此你应该用res.setHeader()函数设定名为Set-Cookie的响应头。<br>Connect针对Set-Cookie响应头这一特殊情况为Node默认的res.setHeader()函数打了补丁，所以它可以按你期望的方式工作。</p>
+</blockquote>
+</li>
+<li><p>express.static(path.join(_dirname,’public’));<br>静态文件服务<br>static()中间件实现了一个高性能的、灵活的、功能丰富的静态文件服务器，支持HTTP缓存机制、范围请求等。更重要的是，它有对恶意路径的安全检查，默认不允许访问隐藏文件（文件名以.开头），会拒绝有害的null字节。static()本质上是一个非常安全的、完全能胜任的静态文件服务中间件，可以保证跟目前各种HTTP客户端的兼容。</p>
+<h2 id="其他中间件">其他中间件</h2></li>
+<li><p>limit()：请求主体的限制<br>只解析请求主体是不够的。开发人员还需要正确分类可接受的请求，并在恰当的时机对它们加以限制。设计limit()中间件组件的目的是帮助过滤巨型的请求，不管它们是不是恶意的。<br>比如说，一个无心的用户上传照片时可能不小心发送了一个未经压缩的RAW图片，里面有几百兆的数据，或者一个恶意用户可能会创建一个超大的JSON字符串把bodyParser()锁住，并最终锁住V8的JSON.parse()方法。你必须把服务器配置好，让它能应对这些状况。</p>
+</li>
+<li><p>query()：查询字符串解析<br>bodyParser()，可以解析表单的POST请求，但GET请求怎么解析呢？用query()中间件。它解析查询字符串，为程序提供req.query对象。对于用过PHP的开发人员而言，它就跟$_GET关联数组类似。query()跟bodyParser()一样，也要放在其他会用到它的中间件前面。</p>
+</li>
+<li><p>methodOverride()：伪造HTTP方法<br>当你构建一个使用特殊HTTP谓词的服务器时，比如PUT或DELETE，在浏览器中会出现一个有趣的问题。浏览器的<form>只能GET或POST，所以你在程序中也不能使用其他方法。<br>一种常见的解决办法是添加一个</form></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">hidden</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>将其值设定为你想用的方法名，然后让服务器检查那个值并“假装”它是这个请求的请求方法。methodOverride()是这项技术中服务器这边的解决办法。</p>
+<ul>
+<li><p>vhost()：虚拟主机<br>vhost()（虚拟主机）中间件是一种通过请求头Host路由请求的简单、轻量的办法。这项任务通常是由反向代理完成的，可以把请求转发到运行在不同端口上的本地服务器那里。<br>vhost()组件在同一个Node进程中完成这一操作，它将控制权交给跟vhost实例关联的Node HTTP服务器。</p>
+</li>
+<li><p>session()：会话管理</p>
+</li>
+<li>csrf()：跨站请求伪造防护</li>
+<li>errorHandler()：开发错误处理</li>
+<li>directory()：目录列表</li>
+<li>basicAuth()：HTTP基本认证</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="安装express">安装express</h1><blockquote>
+<p>npm install -g express</p>
+</blockquote>
+<p>不过由于express升级到了4.X版本，与之前版本差异性有些大，所以，还需要安装express-generator的包才可以</p>
+<blockquote>
+<p>npm install -g express-generator</p>
+</blockquote>
+<p>然后执行<br>express -V查看版本号，注意此处-V是大写字母<br>]]>
+    
+    </summary>
+    
+      <category term="express" scheme="http://yoursite.com/tags/express/"/>
+    
+      <category term="nodejs" scheme="http://yoursite.com/tags/nodejs/"/>
+    
+      <category term="学习笔记" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[package.json详解]]></title>
@@ -52,7 +147,7 @@
 </blockquote>
 <p>或者</p>
 <blockquote>
-<p>author: “ijse <a href="&#x6d;&#x61;&#105;&#108;&#116;&#x6f;&#58;&#x6d;&#x79;&#x40;&#105;&#x6a;&#115;&#101;&#x72;&#46;&#99;&#110;">&#x6d;&#x79;&#x40;&#105;&#x6a;&#115;&#101;&#x72;&#46;&#99;&#110;</a> (<a href="http://www.ijser.cn" target="_blank" rel="external">http://www.ijser.cn</a>)”  </p>
+<p>author: “ijse <a href="&#109;&#x61;&#105;&#108;&#x74;&#x6f;&#x3a;&#x6d;&#121;&#64;&#105;&#x6a;&#115;&#101;&#x72;&#46;&#x63;&#x6e;">&#x6d;&#121;&#64;&#105;&#x6a;&#115;&#101;&#x72;&#46;&#x63;&#x6e;</a> (<a href="http://www.ijser.cn" target="_blank" rel="external">http://www.ijser.cn</a>)”  </p>
 </blockquote>
 <h2 id="contributors">contributors</h2><p>可选字段<br>包的贡献者，是一个数组</p>
 <h2 id="files">files</h2><p>可选字段<br>包所包含的所有文件，可以取值为文件夹。</p>

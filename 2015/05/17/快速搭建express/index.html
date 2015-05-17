@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>快速搭建express | Bambooleaf&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="安装express
+npm install -g express
+
+不过由于express升级到了4.X版本，与之前版本差异性有些大，所以，还需要安装express-generator的包才可以
+
+npm install -g express-generator
+
+然后执行express -V查看版本号，注意此处-V是大写字母">
+<meta property="og:type" content="article">
+<meta property="og:title" content="快速搭建express">
+<meta property="og:url" content="http://yoursite.com/2015/05/17/快速搭建express/index.html">
+<meta property="og:site_name" content="Bambooleaf's blog">
+<meta property="og:description" content="安装express
+npm install -g express
+
+不过由于express升级到了4.X版本，与之前版本差异性有些大，所以，还需要安装express-generator的包才可以
+
+npm install -g express-generator
+
+然后执行express -V查看版本号，注意此处-V是大写字母">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="快速搭建express">
+<meta name="twitter:description" content="安装express
+npm install -g express
+
+不过由于express升级到了4.X版本，与之前版本差异性有些大，所以，还需要安装express-generator的包才可以
+
+npm install -g express-generator
+
+然后执行express -V查看版本号，注意此处-V是大写字母">
+  
+    <link rel="alternative" href="/atom.xml" title="Bambooleaf&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img lazy-src="http://7xj22g.com1.z0.glb.clouddn.com/zyw_kelode.jpg" class="js-avatar">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Bambooleaf</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">像竹子一样成长</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/express/" style="font-size: 10px;">express</a><a href="/tags/github/" style="font-size: 10px;">github</a><a href="/tags/hello-world/" style="font-size: 10px;">hello world</a><a href="/tags/hexo/" style="font-size: 10px;">hexo</a><a href="/tags/nodejs/" style="font-size: 20px;">nodejs</a><a href="/tags/package-json/" style="font-size: 10px;">package.json</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://litten.github.io/">本主题原作者的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">前端菜鸟，正努力转型中~</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Bambooleaf</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://7xj22g.com1.z0.glb.clouddn.com/zyw_kelode.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Bambooleaf</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">像竹子一样成长</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-快速搭建express" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/05/17/快速搭建express/" class="article-date">
+  	<time datetime="2015-05-17T13:28:17.000Z" itemprop="datePublished">2015-05-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      快速搭建express
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/express/">express</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/学习笔记/">学习笔记</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="安装express">安装express</h1><blockquote>
+<p>npm install -g express</p>
+</blockquote>
+<p>不过由于express升级到了4.X版本，与之前版本差异性有些大，所以，还需要安装express-generator的包才可以</p>
+<blockquote>
+<p>npm install -g express-generator</p>
+</blockquote>
+<p>然后执行<br>express -V查看版本号，注意此处-V是大写字母<br><a id="more"></a></p>
+<p>安装完成以后，进入你想要放项目的目录，</p>
+<blockquote>
+<p>express demo-project</p>
+</blockquote>
+<p>就会生成一个空的express项目，包含各种文件夹，然后进入此文件夹</p>
+<blockquote>
+<p>npm install</p>
+</blockquote>
+<p>执行自动的更新</p>
+<p>至此一个完整的express就完成了，打开app.js<br>文件，在最后添加一句</p>
+<blockquote>
+<p>app.listen(3000)</p>
+</blockquote>
+<p>然后在本地浏览器输入localhost:3000，就能能够看见结果了。</p>
+<p>网上的教程多是在express3.x下的，其中的转变可以参考这个博客<br><a href="http://www.cnblogs.com/haogj/p/3985438.html" target="_blank" rel="external">http://www.cnblogs.com/haogj/p/3985438.html</a></p>
+<h1 id="app-js内容详解">app.js内容详解</h1><p>一个新建立的express工程，app.js里面会自动生成如下的代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="keyword">var</span> favicon = <span class="built_in">require</span>(<span class="string">'static-favicon'</span>);</span><br><span class="line"><span class="keyword">var</span> logger = <span class="built_in">require</span>(<span class="string">'morgan'</span>);</span><br><span class="line"><span class="keyword">var</span> cookieParser = <span class="built_in">require</span>(<span class="string">'cookie-parser'</span>);</span><br><span class="line"><span class="keyword">var</span> bodyParser = <span class="built_in">require</span>(<span class="string">'body-parser'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> routes = <span class="built_in">require</span>(<span class="string">'./routes/index'</span>);</span><br><span class="line"><span class="keyword">var</span> users = <span class="built_in">require</span>(<span class="string">'./routes/users'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> app = express();</span><br><span class="line"></span><br><span class="line"><span class="comment">// view engine setup</span></span><br><span class="line">app.set(<span class="string">'views'</span>, path.join(__dirname, <span class="string">'views'</span>));</span><br><span class="line">app.set(<span class="string">'view engine'</span>, <span class="string">'ejs'</span>);</span><br><span class="line"></span><br><span class="line">app.use(favicon());</span><br><span class="line">app.use(logger(<span class="string">'dev'</span>));</span><br><span class="line">app.use(bodyParser.json());</span><br><span class="line">app.use(bodyParser.urlencoded());</span><br><span class="line">app.use(cookieParser());</span><br><span class="line">app.use(express.static(path.join(__dirname, <span class="string">'public'</span>)));</span><br><span class="line"></span><br><span class="line">app.use(<span class="string">'/'</span>, routes);</span><br><span class="line">app.use(<span class="string">'/users'</span>, users);</span><br><span class="line"></span><br><span class="line"><span class="comment">/// catch 404 and forwarding to error handler</span></span><br><span class="line">app.use(<span class="function"><span class="keyword">function</span><span class="params">(req, res, next)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> err = <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Not Found'</span>);</span><br><span class="line">    err.status = <span class="number">404</span>;</span><br><span class="line">    next(err);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">/// error handlers</span></span><br><span class="line"><span class="comment">// development error handler</span></span><br><span class="line"><span class="comment">// will print stacktrace</span></span><br><span class="line"><span class="keyword">if</span> (app.get(<span class="string">'env'</span>) === <span class="string">'development'</span>) &#123;</span><br><span class="line">    app.use(<span class="function"><span class="keyword">function</span><span class="params">(err, req, res, next)</span> </span>&#123;</span><br><span class="line">        res.status(err.status || <span class="number">500</span>);</span><br><span class="line">        res.render(<span class="string">'error'</span>, &#123;</span><br><span class="line">            message: err.message,</span><br><span class="line">            error: err</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// production error handler</span></span><br><span class="line"><span class="comment">// no stacktraces leaked to user</span></span><br><span class="line">app.use(<span class="function"><span class="keyword">function</span><span class="params">(err, req, res, next)</span> </span>&#123;</span><br><span class="line">    res.status(err.status || <span class="number">500</span>);</span><br><span class="line">    res.render(<span class="string">'error'</span>, &#123;</span><br><span class="line">        message: err.message,</span><br><span class="line">        error: &#123;&#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = app;</span><br></pre></td></tr></table></figure>
+<p>下面针对此代码里出现的部分进行一些解释</p>
+<ul>
+<li>require();<br>模块引用（这个深入探究好像也挺多东西，在这就不详解了）</li>
+<li><p>use()<br>加载中间件（这个也挺复杂，我个人也还没理解好）</p>
+</li>
+<li><p>view engine setup<br>模板引擎，表明要使用的模板引擎是 ejs，页面模板在 views 子目录下。在 routes/index.js 的<br>exports.index 函数中通过如下语句调用模板引擎：<br>res.render(‘index’, { title: ‘Express’ });<br>res.render 的功能是调用模板引擎，并将其产生的页面直接返回给客户端。它接受<br>两个参数，第一个是模板的名称，即 views 目录下的模板文件名，不包含文件的扩展名；第<br>二个参数是传递给模板的数据，用于模板翻译。index.ejs 内容如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">h1</span>&gt;</span><span class="tag">&lt;<span class="title">%=</span> <span class="attribute">title</span> %&gt;</span><span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span>Welcome to <span class="tag">&lt;<span class="title">%=</span> <span class="attribute">title</span> %&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>上面代码其中有两处 &lt;%= title %&gt;，用于模板变量显示，它们在模板翻译时会被替换<br>成 Express，因为 res.render 传递了 { title: ‘Express’ }。</p>
+<h2 id="使用的中间件">使用的中间件</h2><ul>
+<li>favicon()<br>favicon是网站的小图标，显示在浏览器的地址栏和收藏栏里。为了得到这个图标，浏览器会请求/favicon.ico文件。一般来说，最好尽快响应对favicon文件的请求，这样程序的其他部分就可以忽略它们了。</li>
+<li>logger()<br>logger()是一个灵活的请求日志中间件，带有可定制的日志格式。它还能缓冲日志输出，减少写硬盘的次数，并且如果你想把日志输出到控制台之外的其他地方，比如文件或socket中，还可以指定日志流</li>
+<li>bodyParser()<br> 解析请求主体<br>所有Web程序都需要接受用户的输入。假设你要用HTML标签<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"file"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>接受用户上传的文件。用一行代码添加bodyParser()中间件就全齐了。这是个非常有用的组件，实际上它整合了其他三个更小的组件：json(),urlencoded(), 和 multipart()。</p>
+<ul>
+<li>cookieParser()<br> 解析HTTP cookie<br> cookie解析器支持常规cookie、签名cookie和特殊的JSON cookie。req.cookies默认是用常规未签名cookie组装而成的。如果你想支持session()中间件要求的签名cookie，在创建cookieParser()实例时要传入一个加密用的字符串。<br><strong>在服务器端设定cookie中间件</strong><blockquote>
+<p>cookieParser()不会为设定出站cookie提供任何帮助。<br>为此你应该用res.setHeader()函数设定名为Set-Cookie的响应头。<br>Connect针对Set-Cookie响应头这一特殊情况为Node默认的res.setHeader()函数打了补丁，所以它可以按你期望的方式工作。</p>
+</blockquote>
+</li>
+<li><p>express.static(path.join(_dirname,’public’));<br>静态文件服务<br>static()中间件实现了一个高性能的、灵活的、功能丰富的静态文件服务器，支持HTTP缓存机制、范围请求等。更重要的是，它有对恶意路径的安全检查，默认不允许访问隐藏文件（文件名以.开头），会拒绝有害的null字节。static()本质上是一个非常安全的、完全能胜任的静态文件服务中间件，可以保证跟目前各种HTTP客户端的兼容。</p>
+<h2 id="其他中间件">其他中间件</h2></li>
+<li><p>limit()：请求主体的限制<br>只解析请求主体是不够的。开发人员还需要正确分类可接受的请求，并在恰当的时机对它们加以限制。设计limit()中间件组件的目的是帮助过滤巨型的请求，不管它们是不是恶意的。<br>比如说，一个无心的用户上传照片时可能不小心发送了一个未经压缩的RAW图片，里面有几百兆的数据，或者一个恶意用户可能会创建一个超大的JSON字符串把bodyParser()锁住，并最终锁住V8的JSON.parse()方法。你必须把服务器配置好，让它能应对这些状况。</p>
+</li>
+<li><p>query()：查询字符串解析<br>bodyParser()，可以解析表单的POST请求，但GET请求怎么解析呢？用query()中间件。它解析查询字符串，为程序提供req.query对象。对于用过PHP的开发人员而言，它就跟$_GET关联数组类似。query()跟bodyParser()一样，也要放在其他会用到它的中间件前面。</p>
+</li>
+<li><p>methodOverride()：伪造HTTP方法<br>当你构建一个使用特殊HTTP谓词的服务器时，比如PUT或DELETE，在浏览器中会出现一个有趣的问题。浏览器的<form>只能GET或POST，所以你在程序中也不能使用其他方法。<br>一种常见的解决办法是添加一个</form></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">hidden</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>将其值设定为你想用的方法名，然后让服务器检查那个值并“假装”它是这个请求的请求方法。methodOverride()是这项技术中服务器这边的解决办法。</p>
+<ul>
+<li><p>vhost()：虚拟主机<br>vhost()（虚拟主机）中间件是一种通过请求头Host路由请求的简单、轻量的办法。这项任务通常是由反向代理完成的，可以把请求转发到运行在不同端口上的本地服务器那里。<br>vhost()组件在同一个Node进程中完成这一操作，它将控制权交给跟vhost实例关联的Node HTTP服务器。</p>
+</li>
+<li><p>session()：会话管理</p>
+</li>
+<li>csrf()：跨站请求伪造防护</li>
+<li>errorHandler()：开发错误处理</li>
+<li>directory()：目录列表</li>
+<li>basicAuth()：HTTP基本认证</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/05/16/package-json详解/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">package.json详解</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="快速搭建express" data-title="快速搭建express" data-url="http://yoursite.com/2015/05/17/快速搭建express/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"bambooleaf"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Bambooleaf
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+<! -- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  </div>
+</body>
+</html>
