@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>spring 工作总结 | Bambooleaf&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="公司另一个项目组换框架，将要换成spring的框架，正好我之前做的项目用的spring，但是我本身也没有理解的多透彻。明天需要我去简单培训一下，所以我就借此机会好好复习一下了
+spring核心思想IOC（控制反转）  Spring容器来实现这些相互依赖对象的创建、协调工作。对象只需要关系业务逻辑本身就可以了。从这方面来说，对象如何得到他的协作对象的责任被反转了（IOC、DI）。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="spring 工作总结">
+<meta property="og:url" content="http://yoursite.com/2015/05/18/spring-工作总结/index.html">
+<meta property="og:site_name" content="Bambooleaf's blog">
+<meta property="og:description" content="公司另一个项目组换框架，将要换成spring的框架，正好我之前做的项目用的spring，但是我本身也没有理解的多透彻。明天需要我去简单培训一下，所以我就借此机会好好复习一下了
+spring核心思想IOC（控制反转）  Spring容器来实现这些相互依赖对象的创建、协调工作。对象只需要关系业务逻辑本身就可以了。从这方面来说，对象如何得到他的协作对象的责任被反转了（IOC、DI）。">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="spring 工作总结">
+<meta name="twitter:description" content="公司另一个项目组换框架，将要换成spring的框架，正好我之前做的项目用的spring，但是我本身也没有理解的多透彻。明天需要我去简单培训一下，所以我就借此机会好好复习一下了
+spring核心思想IOC（控制反转）  Spring容器来实现这些相互依赖对象的创建、协调工作。对象只需要关系业务逻辑本身就可以了。从这方面来说，对象如何得到他的协作对象的责任被反转了（IOC、DI）。">
+  
+    <link rel="alternative" href="/atom.xml" title="Bambooleaf&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img lazy-src="http://7xj22g.com1.z0.glb.clouddn.com/zyw_kelode.jpg" class="js-avatar">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Bambooleaf</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">像竹子一样成长</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/express/" style="font-size: 10px;">express</a><a href="/tags/github/" style="font-size: 10px;">github</a><a href="/tags/hello-world/" style="font-size: 10px;">hello world</a><a href="/tags/hexo/" style="font-size: 10px;">hexo</a><a href="/tags/javascript/" style="font-size: 10px;">javascript</a><a href="/tags/nodejs/" style="font-size: 20px;">nodejs</a><a href="/tags/package-json/" style="font-size: 10px;">package.json</a><a href="/tags/spring/" style="font-size: 10px;">spring</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://litten.github.io/">本主题原作者的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">前端菜鸟，正努力转型中~</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Bambooleaf</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://7xj22g.com1.z0.glb.clouddn.com/zyw_kelode.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Bambooleaf</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">像竹子一样成长</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-spring-工作总结" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/05/18/spring-工作总结/" class="article-date">
+  	<time datetime="2015-05-18T13:50:21.000Z" itemprop="datePublished">2015-05-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      spring 工作总结
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/">spring</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/工作总结/">工作总结</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>公司另一个项目组换框架，将要换成spring的框架，正好我之前做的项目用的spring，但是我本身也没有理解的多透彻。明天需要我去简单培训一下，所以我就借此机会好好复习一下了</p>
+<h1 id="spring核心思想">spring核心思想</h1><h2 id="IOC（控制反转）">IOC（控制反转）</h2><p>  Spring容器来实现这些相互依赖对象的创建、协调工作。对象只需要关系业务逻辑本身就可以了。从这方面来说，对象如何得到他的协作对象的责任被反转了（IOC、DI）。<br><a id="more"></a><br>  所谓IoC，对于spring框架来说，就是由spring来负责控制对象的生命周期和对象间的关系。IoC的一个重点是在系统运行中，动态的向某个对象提供它所需要的其他对象。这一点是通过DI（Dependency Injection，依赖注入）来实现的。<br>  那么DI是如何实现的呢？ Java 1.3之后一个重要特征是反射（reflection），它允许程序在运行的时候动态的生成对象、执行对象的方法、改变对象的属性，spring就是通过反射来实现注入的。<br>  具体文章解释，我觉得这篇写的很好，有时间要好好再看一看<a href="http://blog.csdn.net/it_man/article/details/4402245" target="_blank" rel="external">http://blog.csdn.net/it_man/article/details/4402245</a></p>
+<h2 id="AOP（面向切面编程）">AOP（面向切面编程）</h2><p>面向切面编程（也叫面向方面编程），是目前软件开发中的一个热点，也是Spring框架中的一个重要内容。利用AOP可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提高了开发的效率。<br>主要包括以下几个方面</p>
+<ol>
+<li>切面Aspect</li>
+<li>连接点Joinpoint</li>
+<li>通知Advice</li>
+<li>切入点Pointcut</li>
+<li>目标对象Target Object</li>
+<li>AOP代理AOP Proxy</li>
+</ol>
+<p>具体可参考<a href="http://blog.csdn.net/wangpeng047/article/details/8556800" target="_blank" rel="external">http://blog.csdn.net/wangpeng047/article/details/8556800</a><br>也可参考<a href="http://blog.csdn.net/moreevan/article/details/11977115" target="_blank" rel="external">http://blog.csdn.net/moreevan/article/details/11977115</a></p>
+<h1 id="java注解">java注解</h1><p>使用spring最大的感受就是大量的注解，很方便，但是java基础不怎么样的我就要好好复习一下注解的知识了</p>
+<h2 id="何为注解">何为注解</h2><p> 说起注解，得先提一提什么是元数据(metadata)。所谓元数据就是数据的数据。也就是说，元数据是描述数据的。就象数据表中的字段一样，每个字段描述了这个字段下的数据的含义。而J2SE5.0中提供的注解就是java源代码的元数据，也就是说注解是描述java源代码的。在J2SE5.0中可以自定义注解。使用时在@后面跟注解的名字。</p>
+<h2 id="预定义的注解（Override、Deprecated和SuppressWarnings）">预定义的注解（Override、Deprecated和SuppressWarnings）</h2><h3 id="Override">Override</h3><p>这个注解的作用是标识某一个方法是否覆盖了它的父类的方法，在eclipse下开发，当你继承了一个类或接口，开发工具会自动添加出这个东西。它的主要作用就是防止继承方法名字写错，这样是不会报错的，只会认为你添加了子类的新方法而已，结果就是没有覆盖父类方法，而且编译也不会报错。</p>
+<h3 id="Deprecated">Deprecated</h3><p>这个注解是一个标记注解。所谓标记注解，就是在源程序中加入这个标记后，并不影响程序的编译，但有时编译器会显示一些警告信息。</p>
+<p>那么Deprecated注解是什么意思呢？如果你经常使用eclipse等IDE编写java程序时，可能会经常在属性或方法提示中看到这个词。如果某个类成员的提示中出现了个词，就表示这个并不建议使用这个类成员。因为这个类成员在未来的JDK版本中可能被删除。之所以在现在还保留，是因为给那些已经使用了这些类成员的程序一个缓冲期。如果现在就去了，那么这些程序就无法在新的编译器中编译了。</p>
+<h3 id="SuppressWarnings">SuppressWarnings</h3><p>这个世界的事物总是成对出现。即然有使编译器产生警告信息的，那么就有抑制编译器产生警告信息的。</p>
+<p>SuppressWarnings注解就是为了这样一个目的而存在的。</p>
+<h3 id="自定义注解">自定义注解</h3><ul>
+<li>元注解<br>注解可以用于注解类（annotate Classes）<br>可以用于注解接口(annotate Interfaces)<br>可以用于注解枚举类型(annotate Enums)<br>因此注解同样也可以用于注解注解（annotate Annotations）<br>它们是Target、Retention、Documented和Inherited。</li>
+<li>注解的本质：注解是一种类型</li>
+</ul>
+<p>具体可参考<a href="http://blog.csdn.net/rj042/article/details/6399965" target="_blank" rel="external">http://blog.csdn.net/rj042/article/details/6399965</a></p>
+<h1 id="spring_注解">spring 注解</h1><p>这个部分我始终只是能做到使用，但是具体原理始终没有理解透彻，这里先记下个地址留着以后回头来重新理解<a href="http://blog.csdn.net/hjm4702192/article/details/9420297?utm_source=tuicool" target="_blank" rel="external">http://blog.csdn.net/hjm4702192/article/details/9420297?utm_source=tuicool</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/05/18/javascript变量-作用域-内存/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          javascript变量 作用域 内存
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/05/17/快速搭建express/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">快速搭建express</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="spring-工作总结" data-title="spring 工作总结" data-url="http://yoursite.com/2015/05/18/spring-工作总结/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"bambooleaf"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Bambooleaf
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+<! -- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  </div>
+</body>
+</html>
