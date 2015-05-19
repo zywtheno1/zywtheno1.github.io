@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>hibernate 工作总结 | Bambooleaf&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="hibernate核心思想整体理解可参考hibernate整体理解hibernate是一个采用ORM（Object/Relation Mapping对象关系映射）机制持久层的开源框架    其主要核心思想是面向对象，而非面向过程，而这个面向对象则主要通过ORM实现。    ORM是将表与表之间的操作，映射成对象和对象之间的操作，就是通过操作实体类来达到操作表的目的。从数据库提取的数据会自动按你设置">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hibernate 工作总结">
+<meta property="og:url" content="http://yoursite.com/2015/05/19/hibernate-工作总结/index.html">
+<meta property="og:site_name" content="Bambooleaf's blog">
+<meta property="og:description" content="hibernate核心思想整体理解可参考hibernate整体理解hibernate是一个采用ORM（Object/Relation Mapping对象关系映射）机制持久层的开源框架    其主要核心思想是面向对象，而非面向过程，而这个面向对象则主要通过ORM实现。    ORM是将表与表之间的操作，映射成对象和对象之间的操作，就是通过操作实体类来达到操作表的目的。从数据库提取的数据会自动按你设置">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hibernate 工作总结">
+<meta name="twitter:description" content="hibernate核心思想整体理解可参考hibernate整体理解hibernate是一个采用ORM（Object/Relation Mapping对象关系映射）机制持久层的开源框架    其主要核心思想是面向对象，而非面向过程，而这个面向对象则主要通过ORM实现。    ORM是将表与表之间的操作，映射成对象和对象之间的操作，就是通过操作实体类来达到操作表的目的。从数据库提取的数据会自动按你设置">
+  
+    <link rel="alternative" href="/atom.xml" title="Bambooleaf&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img lazy-src="http://7xj22g.com1.z0.glb.clouddn.com/zyw_kelode.jpg" class="js-avatar">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Bambooleaf</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">像竹子一样成长</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/express/" style="font-size: 10px;">express</a><a href="/tags/github/" style="font-size: 10px;">github</a><a href="/tags/hello-world/" style="font-size: 10px;">hello world</a><a href="/tags/hexo/" style="font-size: 10px;">hexo</a><a href="/tags/hibernate/" style="font-size: 10px;">hibernate</a><a href="/tags/javascript/" style="font-size: 10px;">javascript</a><a href="/tags/nodejs/" style="font-size: 20px;">nodejs</a><a href="/tags/package-json/" style="font-size: 10px;">package.json</a><a href="/tags/spring/" style="font-size: 10px;">spring</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://litten.github.io/">本主题原作者的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">前端菜鸟，正努力转型中~</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Bambooleaf</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://7xj22g.com1.z0.glb.clouddn.com/zyw_kelode.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Bambooleaf</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">像竹子一样成长</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-hibernate-工作总结" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/05/19/hibernate-工作总结/" class="article-date">
+  	<time datetime="2015-05-19T13:57:02.000Z" itemprop="datePublished">2015-05-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      hibernate 工作总结
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hibernate/">hibernate</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/工作总结/">工作总结</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="hibernate核心思想">hibernate核心思想</h1><p>整体理解可参考<a href="http://blog.csdn.net/wanghuan203/article/details/7526246" target="_blank" rel="external">hibernate整体理解</a><br>hibernate是一个采用ORM（Object/Relation Mapping对象关系映射）机制持久层的开源框架<br>    其主要核心思想是面向对象，而非面向过程，而这个面向对象则主要通过ORM实现。<br>    ORM是将表与表之间的操作，映射成对象和对象之间的操作，就是通过操作实体类来达到操作表的目的。从数据库提取的数据会自动按你设置的映射要求封装成特定的对象。之后你就可以通过对对象进行操作来修改数据库中的数据。<strong>这时候你面对的不是信息的碎片，而是一个形象鲜明的对象</strong>。<br><a id="more"></a><br>    hibernate一对一映射等映射可参考<a href="http://blog.csdn.net/wanghuan203/article/details/7566518" target="_blank" rel="external">实体类之间映射</a><br>    关于主要的主键生成策略，可参考<a href="http://blog.csdn.net/wanghuan203/article/details/7562395" target="_blank" rel="external">《Hibernate主键生成策略总结》</a></p>
+<h1 id="Hibernate_Session_&amp;_Transaction详解">Hibernate Session &amp; Transaction详解</h1><h2 id="hibernate_的_session">hibernate 的 session</h2><p>Session是JAVA应用程序和Hibernate进行交互时使用的主要接口，它也是持久化操作核心API，<br>　　注意这里的Session的含义，它与传统意思上web层的HttpSession并没有关系，Hibernate Session之与Hibernate，相当于JDBC Connection相对与JDBC。<br>　　Session对象是有生命周期的，它以Transaction对象的事务开始和结束边界<br>　　Session作为贯穿Hibernate的持久化管理器核心，提供了众多的持久化的方法，如save(), update ,delete ,find(Hibernate 3中已经取消了此方法)等，通过这些方法我们可以透明的完成对象的增删改查（CRUD— create read update delete），这里所谓的透明是指，Session在读取，创建和删除影射的实体对象的实例时，这一系列的操作将被转换为对数据库表中数据的增加，修改，查询和删除操作。</p>
+<p>SessionFactory负责创建Session，SessionFactory是线程安全的，多个并发线程可以同时访问一个SessionFactory 并从中获取Session实例。而Session并非线程安全，也就是说，如果多个线程同时使用一个Session实例进行数据存取，则将会导致Session 数据存取逻辑混乱.因此创建的Session实例必须在本地存取空上运行，使之总与当前的线程相关。</p>
+<p>Session有以下的特点<br>　　1,不是线程安全的，应该避免多个线程共享同一个Session实例<br>　　2,Session实例是轻量级的，所谓轻量级：是指他的创建和删除不需要消耗太多资源<br>　　3,Session对象内部有一个缓存，被称为Hibernate第一缓存，他存放被当前工作单元中加载的对象，每个Session实例都有自己的缓存。<br>　　<br>Hibernate Session缓存被称为Hibernate的第一级缓存。SessionFactory的外置缓存称为Hibernate的二级缓存。这两个缓存都位于持久层，它们存放的都是数据库数据的拷贝。SessionFactory的内置缓存 存放元数据和预定义SQL， SessionFactory的内置缓存是只读缓存。</p>
+<p>Hibernate Session缓存的三大作用：<br>1，减少数据库的访问频率，提高访问性能。<br>2，保证缓存中的对象与数据库同步，位于缓存中的对象称为持久化对象。<br>3，当持久化对象之间存在关联时，Session 保证不出现对象图的死锁。<br>Session 如何判断持久化对象的状态的改变呢？<br>Session 加载对象后会为对象值类型的属性复制一份快照。当Session 清理缓存时，比较当前对象和它的快照就可以知道那些属性发生了变化。</p>
+<p>Session 什么时候清理缓存？<br>1，commit（） 方法被调用时<br>2，查询时会清理缓存，保证查询结果能反映对象的最新状态。<br>3，显示的调用session 的 flush方法。<br>session 清理缓存的特例：<br>当对象使用 native 生成器 时 会立刻清理缓存向数据库中插入记录。</p>
+<h2 id="hibernate的Transanction">hibernate的Transanction</h2><p>Transanction接口是Hibernate的数据库事务接口，用于管理事务，他对底层的事务作出了封装，用户可以使用Transanction对象定义自己的对数据库的原子操作，底层事务包括：JDBC API ,JTA(Java Transaction API)。。。。。<br>　　一个Transaction对象的事务可能会包括多个对数据库进行的操作<br>　　org.hibernate Interface Transaction<br>　　public interface Transaction<br>常用方法：<br>　　public void commit() throws HibernateException 刷新当前的Session以及结束事务的工作，这个方法将迫使数据库对当前的事务进行提交<br>　　public void rollback() throws HibernateException ：强迫回滚当前事务<br>　　public boolean isActive() throws HibernateException： 这个事务是否存活<br><strong>在不同环境下transaction略有不同</strong><br>1、在JDBC上使用Hibernate </p>
+<p>必须写上Hibernate Transaction代码，否则数据库没有反应。此时Hibernate的Transaction就是Connection.commit而已 </p>
+<p>2、在JTA上使用Hibernate </p>
+<p>写JTA的Transaction代码，不要写Hibernate的Transaction代码，否则程序会报错 </p>
+<p>3、在EJB上使用Hibernate </p>
+<p>什么Transactioin代码都不要写，在EJB的部署描述符里面配置 </p>
+<p>参考：<a href="http://blog.163.com/magicc_love/blog/static/1858536622012092478227/" target="_blank" rel="external">http://blog.163.com/magicc_love/blog/static/1858536622012092478227/</a></p>
+<h1 id="spring线程安全问题">spring线程安全问题</h1><p>Spring框架里的bean，或者说组件，获取实例的时候都是默认的单例模式，这是在多线程开发的时候要尤其注意的地方。那么spring是如何保证线程安全的呢？<br><strong>通过TheadLocal类</strong><br>具体内容可参考下面两篇文章<br><a href="http://blog.csdn.net/c289054531/article/details/9196053" target="_blank" rel="external">Spring单实例、多线程安全、事务解析</a><br><a href="http://www.cnblogs.com/doit8791/p/4093808.html" target="_blank" rel="external">Spring单例与线程安全小结</a></p>
+<h1 id="配置多数据源">配置多数据源</h1><p>有人提到了这个问题，不过我没有实践过，所以就先在这里记下个解决方案，以后有机会去试试吧<a href="http://blog.csdn.net/linxuliang/article/details/7838132#comments" target="_blank" rel="external">Spring3+Hibernate3(Jpa)配置多个数据源的解决方案（基于注解）</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/05/18/javascript变量-作用域-内存/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">javascript变量 作用域 内存</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="hibernate-工作总结" data-title="hibernate 工作总结" data-url="http://yoursite.com/2015/05/19/hibernate-工作总结/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"bambooleaf"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Bambooleaf
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+<! -- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  </div>
+</body>
+</html>
