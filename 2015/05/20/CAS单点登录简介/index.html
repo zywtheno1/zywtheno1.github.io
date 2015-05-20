@@ -3,17 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: spring | Bambooleaf&#39;s blog</title>
+  <title>CAS单点登录简介 | Bambooleaf&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="朱烨炜的个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Bambooleaf's blog">
-<meta property="og:url" content="http://yoursite.com/tags/spring/index.html">
+  <meta name="description" content="被借调到另一个项目组，发现他们使用了CAS单点登录，就借此机会了解一下，也许以后有机会用得上
+CAS （ Central Authentication Service ） 是 Yale 大学发起的一个企业级的、开源的项目，旨在为 Web 应用系统提供一种可靠的单点登录解决方法（属于 Web SSO ）。CAS 开始于 2001 年， 并在 2004 年 12 月正式成为 JA-SIG 的一个项目。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CAS单点登录简介">
+<meta property="og:url" content="http://yoursite.com/2015/05/20/CAS单点登录简介/index.html">
 <meta property="og:site_name" content="Bambooleaf's blog">
-<meta property="og:description" content="朱烨炜的个人博客">
+<meta property="og:description" content="被借调到另一个项目组，发现他们使用了CAS单点登录，就借此机会了解一下，也许以后有机会用得上
+CAS （ Central Authentication Service ） 是 Yale 大学发起的一个企业级的、开源的项目，旨在为 Web 应用系统提供一种可靠的单点登录解决方法（属于 Web SSO ）。CAS 开始于 2001 年， 并在 2004 年 12 月正式成为 JA-SIG 的一个项目。">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Bambooleaf's blog">
-<meta name="twitter:description" content="朱烨炜的个人博客">
+<meta name="twitter:title" content="CAS单点登录简介">
+<meta name="twitter:description" content="被借调到另一个项目组，发现他们使用了CAS单点登录，就借此机会了解一下，也许以后有机会用得上
+CAS （ Central Authentication Service ） 是 Yale 大学发起的一个企业级的、开源的项目，旨在为 Web 应用系统提供一种可靠的单点登录解决方法（属于 Web SSO ）。CAS 开始于 2001 年， 并在 2004 年 12 月正式成为 JA-SIG 的一个项目。">
   
     <link rel="alternative" href="/atom.xml" title="Bambooleaf&#39;s blog" type="application/atom+xml">
   
@@ -171,55 +174,110 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-CAS单点登录简介" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/05/18/spring-工作总结/" class="archive-article-date">
-  	<time datetime="2015-05-18T13:50:21.000Z" itemprop="datePublished">5月 18</time>
+    <div class="article-meta">
+      <a href="/2015/05/20/CAS单点登录简介/" class="article-date">
+  	<time datetime="2015-05-20T11:41:57.000Z" itemprop="datePublished">2015-05-20</time>
 </a>
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/05/18/spring-工作总结/">spring 工作总结</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CAS单点登录简介
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/">spring</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CAS/">CAS</a></li></ul>
 	</div>
 
-          
+        
 	<div class="article-category tagcloud">
 	<a class="article-category-link" href="/categories/工作总结/">工作总结</a>
 	</div>
 
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>被借调到另一个项目组，发现他们使用了CAS单点登录，就借此机会了解一下，也许以后有机会用得上</p>
+<p>CAS （ Central Authentication Service ） 是 Yale 大学发起的一个企业级的、开源的项目，旨在为 Web 应用系统提供一种可靠的单点登录解决方法（属于 Web SSO ）。<br>CAS 开始于 2001 年， 并在 2004 年 12 月正式成为 JA-SIG 的一个项目。</p>
+<p>在网上找到一篇不错的文章<a href="http://www.coin163.com/java/cas/cas.html" target="_blank" rel="external">CAS实现SSO单点登录原理</a></p>
+<p>具体配置信息可参考<a href="http://blog.csdn.net/small_love/article/details/6664831" target="_blank" rel="external">CAS实现单点登录（SSO）经典完整教程</a></p>
+
+      
+    </div>
+    
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/05/19/hibernate-工作总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">hibernate 工作总结</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="CAS单点登录简介" data-title="CAS单点登录简介" data-url="http://yoursite.com/2015/05/20/CAS单点登录简介/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"bambooleaf"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
 </div>
       <footer id="footer">
   <div class="outer">
