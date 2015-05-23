@@ -4,7 +4,7 @@
   <subtitle><![CDATA[像竹子一样成长]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-05-22T23:45:08.000Z</updated>
+  <updated>2015-05-23T05:33:06.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -13,6 +13,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[ubuntu安装sublime2]]></title>
+    <link href="http://yoursite.com/2015/05/23/ubuntu%E5%AE%89%E8%A3%85sublime2/"/>
+    <id>http://yoursite.com/2015/05/23/ubuntu安装sublime2/</id>
+    <published>2015-05-23T05:10:19.000Z</published>
+    <updated>2015-05-23T05:33:06.000Z</updated>
+    <content type="html"><![CDATA[<p>学习nodejs，也顺带着学习使用linux，但是在开发工具上悲剧了，以前用习惯了sublime，所以在linux上也要安装一个，结果就是好坑……</p>
+<h1 id="linux下安装sublime2流程">linux下安装sublime2流程</h1><h2 id="安装sublime2">安装sublime2</h2><figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo<span class="instruction"> add-apt-repository </span>ppa:webupd8team/sublime-text-2</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install sublime-text</span><br><span class="line"></span><br><span class="line">//网上写的是sudo apt-get install sublime-text-2,可是在我安装的时候提示sublime2已经合并到sublime里面了，所以安装出来的就是sublime2</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>在ubuntu系统下，安装成功后随便找个文档，右键==&gt;打开方式==&gt;sublime text 2<br>说明安装成功了</p>
+<h2 id="安装Package_Control">安装Package Control</h2><p>sublime2最收欢迎的就是各种各样的插件了<br>在这里记录下我安装的全流程</p>
+<p>1,按Ctrl+`调出console<br>2,粘贴以下代码到底部命令行并回车：<br>import urllib2,os;pf=’Package Control.sublime-package’;ipp=sublime.installed_packages_path();os.makedirs(ipp) if not os.path.exists(ipp) else None;open(os.path.join(ipp,pf),’wb’).write(urllib2.urlopen(‘<a href="http://sublime.wbond.net/&#39;+pf.replace(" target="_blank" rel="external">http://sublime.wbond.net/&#39;+pf.replace(</a>‘ ‘,’%20’)).read())<br>3,重启Sublime Text 2。</p>
+<h2 id="用Package_Control安装插件的方法">用Package Control安装插件的方法</h2><p>按下Ctrl+Shift+P调出命令面板<br>输入install 调出 Install Package 选项并回车，然后在列表中选中要安装的插件。</p>
+<p>更多插件安装可参考<a href="http://www.linuxidc.com/Linux/2013-08/89451.htm" target="_blank" rel="external">http://www.linuxidc.com/Linux/2013-08/89451.htm</a><br>或<a href="http://www.cnblogs.com/wangcan/p/3845268.html" target="_blank" rel="external">http://www.cnblogs.com/wangcan/p/3845268.html</a></p>
+<h2 id="中文输入法问题">中文输入法问题</h2><p>ubuntu下，sublime的中文输入有问题，我就懒得解决了，因为我用的是ibus……<br>看看以后是换成webstorm还是微软的visio studio code吧</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>学习nodejs，也顺带着学习使用linux，但是在开发工具上悲剧了，以前用习惯了sublime，所以在linux上也要安装一个，结果就是好坑……</p>
+<h1 id="linux下安装sublime2流程">linux下安装sublime2流程</h1><h2 id="安装sublime2">安装sublime2</h2><figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo<span class="instruction"> add-apt-repository </span>ppa:webupd8team/sublime-text-2</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install sublime-text</span><br><span class="line"></span><br><span class="line">//网上写的是sudo apt-get install sublime-text-2,可是在我安装的时候提示sublime2已经合并到sublime里面了，所以安装出来的就是sublime2</span><br></pre></td></tr></table></figure>]]>
+    
+    </summary>
+    
+      <category term="sublime2" scheme="http://yoursite.com/tags/sublime2/"/>
+    
+      <category term="开发工具" scheme="http://yoursite.com/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[mongodb课堂笔记]]></title>
@@ -351,7 +379,7 @@
 </blockquote>
 <p>或者</p>
 <blockquote>
-<p>author: “ijse <a href="&#x6d;&#97;&#105;&#x6c;&#x74;&#x6f;&#58;&#x6d;&#121;&#64;&#x69;&#106;&#x73;&#101;&#x72;&#46;&#99;&#110;">&#x6d;&#121;&#64;&#x69;&#106;&#x73;&#101;&#x72;&#46;&#99;&#110;</a> (<a href="http://www.ijser.cn" target="_blank" rel="external">http://www.ijser.cn</a>)”  </p>
+<p>author: “ijse <a href="&#109;&#x61;&#105;&#108;&#116;&#x6f;&#x3a;&#109;&#121;&#64;&#x69;&#106;&#115;&#x65;&#x72;&#x2e;&#x63;&#x6e;">&#109;&#121;&#64;&#x69;&#106;&#115;&#x65;&#x72;&#x2e;&#x63;&#x6e;</a> (<a href="http://www.ijser.cn" target="_blank" rel="external">http://www.ijser.cn</a>)”  </p>
 </blockquote>
 <h2 id="contributors">contributors</h2><p>可选字段<br>包的贡献者，是一个数组</p>
 <h2 id="files">files</h2><p>可选字段<br>包所包含的所有文件，可以取值为文件夹。</p>
