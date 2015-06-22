@@ -4,7 +4,7 @@
   <subtitle><![CDATA[像竹子一样成长]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-06-22T02:00:49.000Z</updated>
+  <updated>2015-06-22T02:15:55.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -19,19 +19,13 @@
     <link href="http://yoursite.com/2015/06/22/%E5%BE%AE%E4%BF%A1nodejs%E7%89%88/"/>
     <id>http://yoursite.com/2015/06/22/微信nodejs版/</id>
     <published>2015-06-22T01:57:49.000Z</published>
-    <updated>2015-06-22T02:00:49.000Z</updated>
+    <updated>2015-06-22T02:15:55.000Z</updated>
     <content type="html"><![CDATA[<h1 id="前言">前言</h1><p>学习nodejs是从搭建hexo开始的，那时候每天还能写一篇日志，结果中间出差了一周，回来后状态全无，就变懒了……<br>好在我并没有彻底放弃学习node，有关于nodejs的学习一直没有停下来，最终算是完成了这个练手版的代码。<br>之所以用nodejs做微信，一是我的工作就是微信公众平台的开发，对这方面比较了解，还有就是nodejs本身非常适合做微信，于是就边学习node边把代码写出来了，所有代码基于测试号进行开发和调试。<br>（PS：本来是想申请一个订阅号的，结果坑爹的腾讯最近没办法申请注册个人的订阅号，总是卡在二维码认证那步，如果有哪位有办法解决感谢分享一下）</p>
 <a id="more"></a>
 <h1 id="学习感想">学习感想</h1><h2 id="参考代码及使用第三方组件">参考代码及使用第三方组件</h2><p>虽然对整个微信开发流程还算熟悉，但是在没人教的情况下还是很痛苦，很多小问题就要很久才能解决，所以很多地方都是参考了别人写的代码才完成的。</p>
 <h3 id="webot">webot</h3><p>首先强烈推荐这个托管在github上的代码，<a href="https://github.com/node-webot。由一群大牛开发，覆盖了几乎现在微信的全部功能，而且还有针对分布式部署的优化，如果有人也要为公司开发微信公众号，强烈推荐这里面的代码。" target="_blank" rel="external">https://github.com/node-webot。由一群大牛开发，覆盖了几乎现在微信的全部功能，而且还有针对分布式部署的优化，如果有人也要为公司开发微信公众号，强烈推荐这里面的代码。</a></p>
 <h3 id="bluebird">bluebird</h3><p>首先作为一个java程序猿，对js这种异步回调的机制还真是不太适应，所有的操作流都只能使用回调函数进行操作，看起来好像没什么，但是真正操作起来就会发现恶心到不行啊。</p>
-<p><code>doAsync1(function () {
-     doAsync2(function () {
-       doAsync3(function () {
-         doAsync4(function () {})
-   })
-   })
-})</code> </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">doAsync1(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">     doAsync2(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">      doAsync3(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">         doAsync4(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;&#125;)</span><br><span class="line">     &#125;)</span><br><span class="line">   &#125;)</span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
 <p>这就是所谓的 “回调黑洞” 了。<br>无论是开发调试，还是要进行修改，都会出现各种让人心烦的感觉。具体的问题在这就不阐述了。<br>那么如何解决问题呢？<br>使用promise，具体请参考 <a href="http://segmentfault.com/a/1190000000586666" target="_blank" rel="external">深入理解 Promise 五部曲：1. 异步问题</a><br>而我最后选择的bluebird进行解决，地址为：<a href="https://www.npmjs.com/package/bluebird" target="_blank" rel="external">https://www.npmjs.com/package/bluebird</a><br>至于为什么我选用它，并不是我认为它有多好，而是我使用的另一个组件<a href="https://github.com/node-modules/urllib" target="_blank" rel="external">urllib</a> 里使用到了，所以我就顺便用了……</p>
 <p>其中promise.map真是神器啊，谁用谁知道。</p>
 <h3 id="cheerio">cheerio</h3><p>说实话我之前从来没写过爬虫的代码，但是自从我用了cheerio之后，爬个每日新闻什么的真是太容易啦</p>
@@ -484,7 +478,7 @@
 </blockquote>
 <p>或者</p>
 <blockquote>
-<p>author: “ijse <a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#111;&#x3a;&#x6d;&#121;&#64;&#x69;&#x6a;&#115;&#x65;&#x72;&#46;&#99;&#x6e;">&#x6d;&#121;&#64;&#x69;&#x6a;&#115;&#x65;&#x72;&#46;&#99;&#x6e;</a> (<a href="http://www.ijser.cn" target="_blank" rel="external">http://www.ijser.cn</a>)”  </p>
+<p>author: “ijse <a href="&#109;&#97;&#105;&#x6c;&#116;&#x6f;&#x3a;&#x6d;&#x79;&#64;&#105;&#x6a;&#x73;&#x65;&#x72;&#46;&#99;&#x6e;">&#x6d;&#x79;&#64;&#105;&#x6a;&#x73;&#x65;&#x72;&#46;&#99;&#x6e;</a> (<a href="http://www.ijser.cn" target="_blank" rel="external">http://www.ijser.cn</a>)”  </p>
 </blockquote>
 <h2 id="contributors">contributors</h2><p>可选字段<br>包的贡献者，是一个数组</p>
 <h2 id="files">files</h2><p>可选字段<br>包所包含的所有文件，可以取值为文件夹。</p>
